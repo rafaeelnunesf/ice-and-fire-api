@@ -1,4 +1,4 @@
-export function loadingAnimation(
+export default function loadingAnimation(
   text = "",
   chars = ["⠙", "⠘", "⠰", "⠴", "⠤", "⠦", "⠆", "⠃", "⠋", "⠉"],
   delay = 100
