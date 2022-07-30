@@ -12,3 +12,10 @@ export async function getManyCovers(req, res) {
   const covers = await booksService.getManyCovers(booksId);
   res.status(200).send(covers);
 }
+export async function getpovCharacters(req, res) {
+  const { bookId } = req.params;
+
+  const cover = await booksService.getpovCharacters(parseInt(bookId));
+
+  res.status(200).send(cover);
+}
