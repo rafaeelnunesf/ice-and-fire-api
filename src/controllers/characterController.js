@@ -14,3 +14,8 @@ export async function getCharacter(req, res) {
 
   res.status(200).send(character);
 }
+export async function getManyCharacters(req, res) {
+  const { characters: charactersIds } = req.body;
+  const characters = await characterService.getMany(charactersIds);
+  res.status(200).send(characters);
+}

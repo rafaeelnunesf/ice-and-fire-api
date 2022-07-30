@@ -10,9 +10,17 @@ async function getOne(characterId) {
   return await db.collection("characters").findOne({ characterId });
 }
 
+async function getMany(charactersIds) {
+  return await db
+    .collection("characters")
+    .find({ characterId: { $in: charactersIds } })
+    .toArray();
+}
+
 const charactersRepository = {
   getBooksIds,
   getOne,
+  getMany,
 };
 
 export default charactersRepository;

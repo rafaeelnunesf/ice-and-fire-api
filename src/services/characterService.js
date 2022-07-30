@@ -1,3 +1,4 @@
+import { EmptyBodyError } from "../errors/emptyBodyError.js";
 import {
   charactersRepository,
   booksRepository,
@@ -14,9 +15,17 @@ export async function getCharacter(characterId) {
   return character;
 }
 
+export async function getMany(charactersIds) {
+  if (!charactersIds) throw EmptyBodyError();
+
+  const characters = await charactersRepository.getMany(charactersIds);
+  return characters;
+}
+
 const characterService = {
   getBooks,
   getCharacter,
+  getMany,
 };
 
 export default characterService;
