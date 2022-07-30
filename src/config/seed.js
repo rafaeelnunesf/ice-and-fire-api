@@ -1,6 +1,7 @@
 import axios from "axios";
+import { loadingAnimation } from "../utils/loadingAnimation.js";
 import db from "../config/db.js";
-
+import { Buffer } from "node:buffer";
 async function insertBooks() {
   try {
     const books = await db.collection("books").find().toArray();
@@ -9,10 +10,19 @@ async function insertBooks() {
         `https://anapioficeandfire.com/api/books?page=1&pageSize=50`
       );
 
-      arrayBooks.forEach((book) => {
+      for (const book of arrayBooks) {
         const urlId = parseInt(book.url.replace(/[^0-9]/g, ""));
         delete book.url;
         book.bookId = urlId;
+
+        const { data: image } = await axios.get(
+          `https://covers.openlibrary.org/b/isbn/${book.isbn}.jpg`
+        );
+
+        const buff = Buffer.from(image);
+        const base64cover = buff.toString("base64");
+
+        book.base64cover = base64cover;
 
         const charactersIds = [];
         book.characters.forEach((character) => {
@@ -27,7 +37,7 @@ async function insertBooks() {
           povCharactersIds.push(characterId);
         });
         book.povCharacters = povCharactersIds;
-      });
+      }
 
       db.collection("books").insertMany(arrayBooks);
     }
@@ -126,6 +136,17 @@ async function insertHouses() {
   }
 }
 
-insertBooks();
-insertCharacters();
-insertHouses();
+async function seed() {
+  let interval = loadingAnimation("Seeding in progress.");
+
+  await insertBooks();
+  await insertCharacters();
+  await insertHouses();
+
+  clearInterval(interval);
+
+  process.stdout.clearLine();
+  console.log("\r" + "🌱 Seeding completed!");
+}
+
+seed();
