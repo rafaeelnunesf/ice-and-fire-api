@@ -9,8 +9,14 @@ export async function getBooks(characterId) {
   return books;
 }
 
+export async function getCharacter(characterId) {
+  const character = await charactersRepository.getOne(characterId);
+  return character;
+}
+
 const characterService = {
   getBooks,
+  getCharacter,
 };
 
 export default characterService;
