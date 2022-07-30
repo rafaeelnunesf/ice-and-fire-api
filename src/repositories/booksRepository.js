@@ -1,12 +1,9 @@
 import db from "../config/db.js";
-async function getBooksFromIds(arrayIds) {
-  const response = await db
+async function getBooksFromIds(booksIds) {
+  return await db
     .collection("books")
-    .find({ bookId: { $in: arrayIds } })
+    .find({ bookId: { $in: booksIds } })
     .toArray();
-
-  console.log(response);
-  return response;
 }
 
 const booksRepository = {
