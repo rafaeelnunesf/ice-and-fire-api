@@ -6,6 +6,16 @@ export function handleApplicationErrors(err, _req, res, _next) {
       message: err.message,
     });
   }
+  if (err.name === "EmptyArray") {
+    return res.status(httpStatus.BAD_REQUEST).send({
+      message: err.message,
+    });
+  }
+  if (err.name === "NotFoundError") {
+    return res.status(httpStatus.NOT_FOUND).send({
+      message: err.message,
+    });
+  }
 
   console.error(err);
   res.status(httpStatus.INTERNAL_SERVER_ERROR).send({

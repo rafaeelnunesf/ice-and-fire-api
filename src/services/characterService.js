@@ -1,4 +1,9 @@
-import { EmptyBodyError } from "../errors/emptyBodyError.js";
+import {
+  EmptyBodyError,
+  notFoundError,
+  EmptyArrayError,
+} from "../errors/index.js";
+
 import {
   charactersRepository,
   booksRepository,
@@ -12,11 +17,14 @@ export async function getBooks(characterId) {
 
 export async function getCharacter(characterId) {
   const character = await charactersRepository.getOne(characterId);
+  if (!character) throw notFoundError();
   return character;
 }
 
 export async function getMany(charactersIds) {
   if (!charactersIds) throw EmptyBodyError();
+  if (charactersIds.length === 0) throw EmptyArrayError();
+  // type error
 
   const characters = await charactersRepository.getMany(charactersIds);
   return characters;
