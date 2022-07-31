@@ -28,16 +28,14 @@ export async function getpovCharacters(bookId) {
 export async function getManyCovers(booksIds) {
   if (!booksIds) throw EmptyBodyError();
 
-  const verify = booksIds.some(
-    (item) =>
-      isNaN(item) || item.length !== undefined || !Array.isArray(booksIds)
+  const typeVerification = booksIds.some(
+    (item) => isNaN(item) || item.length !== undefined
   );
 
-  if (verify) throw typeError();
+  if (typeVerification || !Array.isArray(booksIds)) throw typeError();
   if (booksIds.length === 0) throw EmptyArrayError();
 
   const books = await booksRepository.getFromIds(booksIds);
-
   return books.map((book) => book.base64cover);
 }
 

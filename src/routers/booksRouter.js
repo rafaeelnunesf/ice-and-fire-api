@@ -8,6 +8,6 @@ const booksRouter = Router();
 
 booksRouter.get("/:bookId/cover", getBookCover);
 booksRouter.get("/:bookId/pov-characters", getpovCharacters);
-booksRouter.get("/", getManyCovers);
+booksRouter.get("/covers", getManyCovers);
 
 export default booksRouter;
