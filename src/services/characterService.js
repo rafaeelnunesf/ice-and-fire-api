@@ -2,6 +2,7 @@ import {
   EmptyBodyError,
   notFoundError,
   EmptyArrayError,
+  typeError,
 } from "../errors/index.js";
 
 import {
@@ -23,8 +24,13 @@ export async function getCharacter(characterId) {
 
 export async function getMany(charactersIds) {
   if (!charactersIds) throw EmptyBodyError();
+
+  const typeVerification = charactersIds.some(
+    (item) => isNaN(item) || item.length !== undefined
+  );
+
+  if (typeVerification || !Array.isArray(charactersIds)) throw typeError();
   if (charactersIds.length === 0) throw EmptyArrayError();
-  // type error
 
   const characters = await charactersRepository.getMany(charactersIds);
   return characters;
