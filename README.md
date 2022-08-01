@@ -101,35 +101,61 @@ On this route you can get information about a character's books:
 
 ```
 {
-  "_id": "62e45b271b1bd29359b6c756",
-  "name": "",
-  "gender": "Female",
-  "culture": "Braavosi",
-  "born": "",
+  "_id": "62e45b2f1b1bd29359b6cd39",
+  "name": "Tyrion Lannister",
+  "gender": "Male",
+  "culture": "",
+  "born": "In 273 AC, at Casterly Rock",
   "died": "",
   "titles": [
-    ""
+    "Acting Hand of the King (former)",
+    "Master of Coin (former)"
   ],
   "aliases": [
-    "The Daughter of the Dusk"
+    "The Imp",
+    "Halfman",
+    "The boyman",
+    "Giant of Lannister",
+    "Lord Tywin's Doom",
+    "Lord Tywin's Bane",
+    "Yollo",
+    "Hugor Hill",
+    "No-Nose",
+    "Freak",
+    "Dwarf"
   ],
   "father": "",
   "mother": "",
-  "spouse": "",
-  "allegiances": [],
-  "books": [
-    5
+  "spouse": "https://anapioficeandfire.com/api/characters/2044",
+  "allegiances": [
+    229
   ],
-  "povBooks": [],
+  "books": [
+    5,
+    11
+  ],
+  "povBooks": [
+    1,
+    2,
+    3,
+    8
+  ],
   "tvSeries": [
-    ""
+    "Season 1",
+    "Season 2",
+    "Season 3",
+    "Season 4",
+    "Season 5",
+    "Season 6"
   ],
   "playedBy": [
-    ""
+    "Peter Dinklage"
   ],
-  "characterId": 1
+  "characterId": 1052
 }
 ```
+
+[backToTheTop](#Books)
 
 #### ManyCharacters
 
@@ -235,6 +261,8 @@ On this route you can get information about a character's books:
   }
 ]
 ```
+
+[backToTheTop](#Books)
 
 #### povCharacters
 
@@ -659,6 +687,8 @@ On this route you can get information about a character's books:
   }
 ]
 ```
+
+[backToTheTop](#Books)
 
 #### Character's_Books
 
@@ -1937,3 +1967,5 @@ On this route you can get information about a character's books:
   }
 ]
 ```
+
+[backToTheTop](#Books)
