@@ -71,9 +71,9 @@ This route you can get the cover of many books:
 
 This route you can get the cover of one books:
 
-| **url**                 | **Method** | Body Params | URL Params                        | Success Response                                                             | Error Response                                                                             |
-| ----------------------- | ---------- | ----------- | --------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| /:bookId/pov-characters | `GET`      | -           | **Required:**<br />bookId: String | **Code:** 200 - OK<br />**Content:** <br/>[povCharacters](####povCharacters) | **Code:** 400 - Bad Request!<br />**Content:** `{"message": "No result for this search!"}` |
+| **url**                 | **Method** | Body Params | URL Params                        | Success Response                                                          | Error Response                                                                             |
+| ----------------------- | ---------- | ----------- | --------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| /:bookId/pov-characters | `GET`      | -           | **Required:**<br />bookId: String | **Code:** 200 - OK<br />**Content:** <br/>[povCharacters](#povCharacters) | **Code:** 400 - Bad Request!<br />**Content:** `{"message": "No result for this search!"}` |
 
 ### Models
 
