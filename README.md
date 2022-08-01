@@ -4,7 +4,7 @@ This is an api with information about the A Song of Ice and Fire books and their
 
 ## About this Project
 
-This project is part of a technical test by the company [Mobix](https://www.mobixtec.com/) and part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
+This project is part of a technical [test](github.com/mobixsoftwarestudio/jobs/tree/master/backend) by the company [Mobix](https://www.mobixtec.com/) and part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
 
 Email-me: rafaelnfsq@gmail.com
 
