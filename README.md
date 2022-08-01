@@ -65,9 +65,9 @@ On this route you can get the cover of one books:
 
 On this route you can get the cover of many books:
 
-| **url**       | **Method** | Body Params                          | URL Params | Success Response                                                      | Error Response                                                                             |
-| ------------- | ---------- | ------------------------------------ | ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| /books/covers | `GET`      | **Example:**<br />"books":[1, 2, 3]} | -          | **Code:** 200 - OK<br />**Content:**<br /> Array of Strings: "base64" | **Code:** 400 - Bad Request!<br />**Content:** `{"message": "No result for this search!"}` |
+| **url**       | **Method** | Body Params                           | URL Params | Success Response                                                      | Error Response                                                                             |
+| ------------- | ---------- | ------------------------------------- | ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| /books/covers | `GET`      | **Example:**<br />{"books":[1, 2, 3]} | -          | **Code:** 200 - OK<br />**Content:**<br /> Array of Strings: "base64" | **Code:** 400 - Bad Request!<br />**Content:** `{"message": "No result for this search!"}` |
 
 On this route you can get the cover of one books:
 
@@ -85,9 +85,9 @@ On this route you can get info about one character:
 
 On this route you can get info about many characters:
 
-| url         | Method | Body Params                               | URL Params | Success Response                                                            | Error Response                                                                             |
-| ----------- | ------ | ----------------------------------------- | ---------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| /characters | `GET`  | **Example:**<br />"characters":[1, 2, 3]} | -          | **Code:** 200 - OK<br />**Content:** <br/>[ManyCharacters](#ManyCharacters) | **Code:** 400 - Bad Request!<br />**Content:** `{"message": "No result for this search!"}` |
+| url         | Method | Body Params                                | URL Params | Success Response                                                            | Error Response                                                                             |
+| ----------- | ------ | ------------------------------------------ | ---------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| /characters | `GET`  | **Example:**<br />{"characters":[1, 2, 3]} | -          | **Code:** 200 - OK<br />**Content:** <br/>[ManyCharacters](#ManyCharacters) | **Code:** 400 - Bad Request!<br />**Content:** `{"message": "No result for this search!"}` |
 
 On this route you can get information about a character's books:
 
